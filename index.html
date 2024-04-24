@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+    <title>E-Wordsmith</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    background-image: url(paper.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.wrapper{
+  height: 100%;
+  width: 300px;
+  position: relative;
+}
+.wrapper .menu-btn{
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  position: fixed;
+  background: #C7A589;
+  color: #F3F3F1;
+  height: 45px;
+  width: 45px;
+  z-index: 9999;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+#btn:checked ~ .menu-btn{
+  left: 247px;
+}
+.wrapper .menu-btn i{
+  position: absolute;
+  transform: matrix3d();
+  font-size: 23px;
+  transition: all 0.3s ease;
+}
+.wrapper .menu-btn i.fa-times{
+  opacity: 0;
+}
+#btn:checked ~ .menu-btn i.fa-times{
+  opacity: 1;
+  transform: rotate(-180deg);
+}
+#btn:checked ~ .menu-btn i.fa-bars{
+  opacity: 0;
+  transform: rotate(180deg);
+}
+#sidebar{
+  position: fixed;
+  background: #404040;
+  height: 100%;
+  width: 270px;
+  overflow: hidden;
+  left: -270px;
+  transition: all 0.3s ease;
+}
+#btn:checked ~ #sidebar{
+  left: 0;
+}
+#sidebar .title1{
+  line-height: 65px;
+  text-align: center;
+  background: #59524C;
+  font-size: 25px;
+  font-weight: 600;
+  color: #f2f2f2;
+  border-bottom: 1px solid #222;
+}
+#sidebar .list-items{
+  position: relative;
+  background: #59524C;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+#sidebar .list-items li{
+  padding-left: 40px;
+  line-height: 50px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
+}
+#sidebar .list-items li:hover{
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 0px 10px 3px #222;
+  background-color: #C7A589;
+  border-radius: 10%;
+  
+}
+#sidebar .list-items li:first-child{
+  border-top: none;
+}
+#sidebar .list-items li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+#sidebar .list-items li a i{
+  margin-right: 20px;
+}
+#sidebar .list-items .icons{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  bottom: 100px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sidebar .list-items .icons a{
+  height: 100%;
+  width: 40px;
+  display: block;
+  margin: 0 5px;
+  font-size: 18px;
+  color: #f2f2f2;
+  background: #4a4a4a;
+  border-radius: 5px;
+  border: 1px solid #383838;
+  transition: all 0.3s ease;
+}
+#sidebar .list-items .icons a:hover{
+  background: #404040;
+}
+.list-items .icons a:first-child{
+  margin-left: 0px;
+}
+.banner {
+  width: 35%;
+ margin-left: 33%;
+ height: 500px;
+}
+li.dropdown {
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #404040;
+  width: 60%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 10%;
+
+}
+
+.dropdown-content a {
+  color: black;
+ 
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: center;
+}
+.dropdown-content a:hover {
+    background-color: #C7A589;
+    color: #202020;
+    border-radius: 10%;
+}
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 30%;
+            
+            text-align: center;
+            color: #404040;
+        }
+        .content h1 {
+            font-size: 120px;
+            margin-top: 80px;
+            font-family: "Caveat", cursive;
+        }
+        .content p{
+            margin: 20px auto;
+            line-height: 25px;
+            font-weight: 100;
+            font-family: 'Poppins';
+            font-size: 50px
+        }
+        button {
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid black;
+            background: transparent;
+            color: black;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            font-size: 30px;
+        }
+        span {
+            background: #59524C;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        button:hover span {
+            width: 100%;
+        }
+        button:hover{
+            border: none;
+            color: #DCD8D0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="checkbox" id="btn" hidden>
+        <label for="btn" class="menu-btn">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </label>
+        <nav id="sidebar">
+          <div class="title1">E - Wordsmith</div>
+  <ul class="list-items">
+    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+  <li><a href="editorial.html"><i class="fa-solid fa-book"></i>Editorial</a></li>
+  <li><a href="news.html"><i class="fas fa-globe-asia"></i>News</a></li>
+  <li><a href="sports.html"><i class="fa-solid fa-medal"></i>Sports</a></li>
+  <li class="dropdown">
+  <a href="javascript:void(0)" class="dropbtn"><i class="fa-solid fa-people-group"></i>Developers</a>
+      <div class="dropdown-content">
+        <a href="deovi.html">John Benjamin</a>
+        <a href="renzcyvi.html">Renzcy</a>
+        <a href="cianvi.html">Cian Mhark</a>
+        <a href="jmvi.html">John Michael</a>
+      </li>
+  <div class="icons">
+              <a href="https://www.facebook.com/jbilatbwhah"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.facebook.com/johnmichael.sapinoso.90"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.facebook.com/renzcy.dematera"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.facebook.com/cian.medina.1"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+  </ul>
+  </nav>
+      </div>
+    <div class="content">
+        <h1>Welcome to E - Wordsmith of <br>Taytay Senior High School</h1>
+        <p>Explore the News</p>
+    <div>
+        <button type="button" onclick="location.href='news.html'"><span></span>News</button>
+        <button type="button" onclick="location.href='editorial.html'"><span></span>Editorial</button>
+    </div>
+    </div>
+</body>
+</html>

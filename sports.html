@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CABRERA E - WORDSMITH</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+body {
+  background-image: url(paper.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-right: 25px;
+  margin-left: 50px;
+}
+.wrapper{
+height: 100%;
+width: 300px;
+position: relative;
+}
+.wrapper .menu-btn{
+position: absolute;
+left: 20px;
+top: 10px;
+position: fixed;
+background: #C7A589;
+color: #F3F3F1;
+height: 45px;
+width: 45px;
+z-index: 9999;
+border: 1px solid #333;
+border-radius: 5px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s ease;
+}
+#btn:checked ~ .menu-btn{
+left: 247px;
+}
+.wrapper .menu-btn i{
+position: absolute;
+transform: matrix3d();
+font-size: 23px;
+transition: all 0.3s ease;
+}
+.wrapper .menu-btn i.fa-times{
+opacity: 0;
+}
+#btn:checked ~ .menu-btn i.fa-times{
+opacity: 1;
+transform: rotate(-180deg);
+}
+#btn:checked ~ .menu-btn i.fa-bars{
+opacity: 0;
+transform: rotate(180deg);
+}
+#sidebar{
+position: fixed;
+background: #404040;
+height: 100%;
+width: 270px;
+overflow: hidden;
+left: -270px;
+transition: all 0.3s ease;
+}
+#btn:checked ~ #sidebar{
+left: 0;
+}
+#sidebar .title1{
+line-height: 65px;
+text-align: center;
+background: #59524C;
+font-size: 25px;
+font-weight: 600;
+color: #f2f2f2;
+border-bottom: 1px solid #222;
+}
+#sidebar .list-items{
+position: relative;
+background: #59524C;
+width: 100%;
+height: 100%;
+list-style: none;
+}
+#sidebar .list-items li{
+padding-left: 40px;
+line-height: 50px;
+border-top: 1px solid rgba(255,255,255,0.1);
+border-bottom: 1px solid #333;
+transition: all 0.3s ease;
+}
+#sidebar .list-items li:hover{
+border-top: 1px solid transparent;
+border-bottom: 1px solid transparent;
+box-shadow: 0 0px 10px 3px #222;
+background-color: #C7A589;
+border-radius: 10%;
+
+}
+#sidebar .list-items li:first-child{
+border-top: none;
+}
+#sidebar .list-items li a{
+color: #f2f2f2;
+text-decoration: none;
+font-size: 18px;
+font-weight: 500;
+height: 100%;
+width: 100%;
+display: block;
+}
+#sidebar .list-items li a i{
+margin-right: 20px;
+}
+#sidebar .list-items .icons{
+width: 100%;
+height: 40px;
+text-align: center;
+position: absolute;
+bottom: 100px;
+line-height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#sidebar .list-items .icons a{
+height: 100%;
+width: 40px;
+display: block;
+margin: 0 5px;
+font-size: 18px;
+color: #f2f2f2;
+background: #4a4a4a;
+border-radius: 5px;
+border: 1px solid #383838;
+transition: all 0.3s ease;
+}
+#sidebar .list-items .icons a:hover{
+background: #404040;
+}
+.list-items .icons a:first-child{
+margin-left: 0px;
+}
+.banner {
+width: 35%;
+margin-left: 33%;
+height: 500px;
+}
+li.dropdown {
+display: inline-block;
+width: 100%;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #404040;
+width: 60%;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+border-radius: 10%;
+
+}
+
+.dropdown-content a {
+color: black;
+
+text-decoration: none;
+display: block;
+text-align: left;
+}
+.dropdown:hover .dropdown-content {
+display: block;
+text-align: center;
+}
+.dropdown-content a:hover {
+  background-color: #C7A589;
+  color: #202020;
+  border-radius: 10%;
+}
+.active {
+  background-color: #C7A589;
+  border-radius: 10%;
+}
+
+
+
+.title {
+text-align: center;
+color: #803D3B;
+font-size: 50px;
+font-family: "Caveat", cursive;
+
+
+}
+
+.content {
+column-width: 300px;
+column-gap: 2em;
+padding-bottom: 10px;
+column-count: 3;
+text-align: justify;
+font-family: Times New Roman;
+font-size: 18px;
+}
+
+.paragraph {
+margin-top: 0px;
+font-size: 1.6em;
+}
+
+.content p:first-of-type:first-letter {
+  font-size: 5em;
+  float: left;
+  line-height: 50%;
+  margin: 0.1em 0.1em 0.1em;
+}
+
+.content img {
+  height: auto;
+  width: 100%;
+}
+
+.content h1 {
+  column-span: all;
+  margin-top: 0;
+  margin-bottom: 70px;
+  text-align: center;
+  font-size: 55px;
+}
+
+.content p {
+  font-size: 25px;
+}
+
+  </style>
+  </head>
+  <body class="body">
+    <div class="wrapper">
+      <input type="checkbox" id="btn" hidden>
+      <label for="btn" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </label>
+      <nav id="sidebar">
+        <div class="title">E - Wordsmith</div>
+<ul class="list-items">
+  <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+    <li><a href="editorial.html"><i class="fa-solid fa-book"></i>Editorial</a></li>
+    <li><a href="news.html"><i class="fas fa-globe-asia"></i>News</a></li>
+    <li><a href="sports.html"><i class="fa-solid fa-medal"></i>Sports</a></li>
+<li class="dropdown">
+<a href="javascript:void(0)" class="dropbtn"><i class="fa-solid fa-people-group"></i>Developers</a>
+    <div class="dropdown-content">
+        <a href="deovi.html">John Benjamin</a>
+        <a href="renzcyvi.html">Renzcy</a>
+        <a href="cianvi.html">Cian Mhark</a>
+        <a href="jmvi.html">John Michael</a>
+    </li>
+<div class="icons">
+            <a href="https://www.facebook.com/jbilatbwhah"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/johnmichael.sapinoso.90"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/renzcy.dematera"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/cian.medina.1"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+</ul>
+</nav>
+    </div>
+<div class="content">
+  <h1 class="title"> Dustin Villafuerte soar in Aerobic Gymnastics </h1>
+      <div class="header">
+        <div>
+          <img src="dustin.jpg" alt="dustin">
+          <p>On December 23, Dustin Villafuerte displayed his brilliance and dominance, delivering an ascendant performance to salvage a three-gold win in the Aerobic Gymnastics: Junior's Category Competition at the Batang Pinoy.</p>
+          <br>
+          <p>Representing Rizal, Dustin soars high against the pride of Gen- San, Cavite, Naga, and South Cotabato, excelling in Individual Men. Mixed Pair, and Trio Category at the Rizal Memorial Sports Complex Villafuerte swept multiple golds, showcasing his overflowing prow- ess and skills that proved he is more than an athlete riding on the</p>
+          <p>name of his much more illustrious inspiration. "I'm glad and happy because I waited for so long to get these golds, and it took me some time to prepare for it," said Dustin in Filipino after a peerless outing in the homecourt gym. With the Batang Pinoy now his hive, Villafuerte could look to expand and unleash his full potential in a more prestigious and sophisticated stage.
+          </p>
+          <br>
+        </div>
+          <h1 class="title">TaySenHigh shakes up Provincial Ranks ousting San Beda After Two Decades</h1>
+          <img src="basketball.jpg" alt="basketball">
+          <p>Senior High Patriots managed to escape make history against the reigning Beda in the 3x3 Basket champions San ball League with the score of 21-18 at the recently concluded Municipal Meet which was held at San Juan Gym</p><br>
+          <p>Iverson Triste takes the charge of the Patriots providing much needed points to poost the much awalled upset in the tournament Daniel Lumogdang also contributed poise to the team. Same as the brilliance of Lanz Lomeda and Alexander Briagas who lift the team up and steal the reign.</p><br>
+          <p>The start of the game seemed to be a showcasing whut oiler coaster Each team is sho hey got and what they can offer. The San Beda Red Lions even started to climb up in the mid part of the game. According to our best player of the game Iverson Triste, they suffered and stumbled when the opponent began to get their groove But for him, it in the signal to believe and persevere
+          </p><br>
+          <p>The team got their momentum in the crucial part of the game where players are all fryped up. The showdown of the aoe players of both teams are rmiciding in the end, the Patriots deared the game with a winning shot and smashed San Beda in lower ranks</p>
+        </div>
+      </div>
+      <br>
+<p></p>
+<p></p>
+</div>
+</body>
+</html>
